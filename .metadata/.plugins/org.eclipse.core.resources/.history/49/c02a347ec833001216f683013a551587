@@ -1,0 +1,62 @@
+package com.libary;
+
+import android.content.Context;
+import android.opengl.GLSurfaceView;
+import android.util.Log;
+import android.view.GestureDetector;
+import android.view.GestureDetector.OnGestureListener;
+import android.view.MotionEvent;
+
+class MyGLSurfaceView extends GLSurfaceView{
+	private GestureDetector mDetector;
+	
+	private int EGLVersion = 2;
+	
+	
+    public MyGLSurfaceView(Context context){
+        super(context);
+        
+        this.mDetector = new GestureDetector(this.getContext(), new mListener());
+        
+        // Create an OpenGL ES 2.0 context
+        this.setEGLContextClientVersion(this.EGLVersion);
+        this.setRenderer(new MyRenderer());
+        //this.setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
+    }
+    
+    @Override
+    public boolean onTouchEvent(MotionEvent e) {
+    	super.onTouchEvent(e);
+
+        requestRender();
+        
+    	  boolean result = mDetector.onTouchEvent(e);
+    	  
+    	   if (!result) {
+    	       if (e.getAction() == MotionEvent.ACTION_UP) {
+    	    	   
+    	           result = true;
+    	       }
+    	   }
+    	   return result;
+    }
+}
+
+class mListener extends GestureDetector.SimpleOnGestureListener {
+	@Override
+	public boolean onDown(MotionEvent e) {
+		
+		return true;
+	}
+	
+	@Override
+	public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+		//MyRenderer.eyeX += (distanceX / 100);
+		//MyRenderer.eyeZ += (distanceY / 100);
+		
+		//Log.d("eyeX", MyRenderer.eyeX + "");
+		//Log.d("eyeZ", MyRenderer.eyeZ + "");
+		
+		return true;
+	}
+}

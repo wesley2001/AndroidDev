@@ -1,0 +1,25 @@
+package com.libary;
+
+import android.opengl.Matrix;
+
+public class MyProjection {
+	public float[] mProjMatrix = new float[16];
+	public float offset = 0;
+	public float left = 0;
+	public float right = 0;
+	private float bottom = -1;
+	private float top = 1;
+	private float near = 3;
+	private float far = 7;
+	
+	public MyProjection() {
+		Matrix.frustumM(mProjMatrix, this.offset, -ratio, ratio, this.bottom, this.top, this.near, this.far);
+	}
+	
+	public void calculateRatio(int width, int height) {
+		float ratio = (float) width / height;
+		
+		this.left = -ratio;
+		this.right = ratio;
+	}
+}

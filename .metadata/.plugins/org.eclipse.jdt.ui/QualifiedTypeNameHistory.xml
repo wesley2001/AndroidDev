@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="android.opengl.GLSurfaceView"/>
+<fullyQualifiedTypeName name="com.libary.MyGLSurfaceView"/>
+<fullyQualifiedTypeName name="javax.microedition.khronos.opengles.GL10"/>
+<fullyQualifiedTypeName name="android.opengl.GLES20"/>
+<fullyQualifiedTypeName name="com.libary.Triangle"/>
+<fullyQualifiedTypeName name="android.os.Debug"/>
+<fullyQualifiedTypeName name="android.opengl.Matrix"/>
+<fullyQualifiedTypeName name="com.libary.MyRenderer"/>
+<fullyQualifiedTypeName name="android.view.GestureDetector"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="com.libary.MyCamera"/>
+<fullyQualifiedTypeName name="com.libary.MyProjection"/>
+</qualifiedTypeNameHistroy>

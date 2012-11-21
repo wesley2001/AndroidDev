@@ -1,0 +1,5 @@
+package com.libary;
+
+public class MyProjection {
+	public float[] mProjMatrix = new float[16];
+}

@@ -1,0 +1,113 @@
+package com.libary;
+
+import android.app.Activity;
+import android.opengl.GLSurfaceView;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.GestureDetector;
+import android.view.GestureDetector.OnGestureListener;
+import android.view.Menu;
+import android.view.MotionEvent;
+
+public class MainActivity extends Activity implements OnGestureListener {
+	
+	private GLSurfaceView mGLView;
+	private GestureDetector detector; 
+ 
+	 
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+        mGLView = new MyGLSurfaceView(this);
+        detector = new GestureDetector(this,this);
+        
+        
+        setContentView(mGLView);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.activity_main, menu);
+		return true;
+	}
+	
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		
+		android.os.Debug.stopMethodTracing();
+	}
+	
+	@Override
+	public void onPause() {
+		super.onPause();
+	}
+	
+	@Override
+	public void onResume() {
+		super.onResume();
+	}
+	
+	@Override 
+	protected void onStop() {
+		super.onStop();
+	}
+	
+	@Override 
+	protected void onStart() {
+		super.onStart();
+	}
+	
+	@Override
+	protected void onRestart() {
+	    super.onRestart(); 
+	}
+	 
+	@Override 
+	  public boolean onTouchEvent(MotionEvent me){ 
+	    this.detector.onTouchEvent(me);
+	   return super.onTouchEvent(me); 
+	  }
+	  
+	@Override
+	public boolean onDown(MotionEvent e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+			float velocityY) {
+		// TODO Auto-generated method stub
+			Log.d("velocity", velocityX + "");
+			Log.d("velocity", velocityX + "");
+		return false;
+	}
+
+	@Override
+	public void onLongPress(MotionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,
+			float distanceY) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void onShowPress(MotionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean onSingleTapUp(MotionEvent e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}

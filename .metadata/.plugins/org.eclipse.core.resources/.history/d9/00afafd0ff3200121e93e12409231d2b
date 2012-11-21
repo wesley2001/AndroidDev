@@ -1,0 +1,10 @@
+package com.libary;
+
+import android.app.Activity;
+
+public class DiplayMessageActivity extends Activity {
+	
+	protected void onCreate(Bundle savedInstanceState) {
+		
+	}
+}

@@ -1,0 +1,13 @@
+package com.libary;
+
+import android.opengl.Matrix;
+
+public class MyProjection {
+	public float[] mProjMatrix = new float[16];
+	public float offset;
+	
+	
+	public MyProjection() {
+		Matrix.frustumM(mProjMatrix, 0, -ratio, ratio, -1, 1, 3, 7);
+	}
+}
